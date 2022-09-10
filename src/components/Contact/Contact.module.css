@@ -1,0 +1,63 @@
+.cotainerSocial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    line-height: 0px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.folderImg {
+    width: 50px;
+    height: 50px;
+}
+
+.folderName {
+    color: #fff;
+}
+
+.containerFolder {
+    width: 50%;
+    height: 60%;
+    background-color: rgba(3, 3, 3, 0.731);
+    position: absolute;
+    right: 0;
+    margin-right: 10rem;
+    display: none;
+}
+
+.folderImgInside {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+.containerLineSup {
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.363);
+    display: flex;
+    justify-content: space-between;
+}
+
+.folderNameInside {
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.buttonFolder{
+    width: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+
+.buttonFolder:hover {
+    color: #000;
+    background-color: rgba(248, 0, 0, 0.768);
+    transition: all 0.3s ease-in-out;
+}

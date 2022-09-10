@@ -19,7 +19,7 @@
 }
 
 .btnPower:hover {
-    background-color: rgba(23, 197, 23, 0.634);
+    background-color: rgba(15, 218, 171, 0.849);
     transition: all 0.8s ease-in-out;
     box-shadow: 0 0 15px #fff;
 }
