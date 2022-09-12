@@ -1,33 +1,15 @@
 import React from "react";
-import { useState } from "react";
 import FolderImg from "../../images/desktop-computer.png";
 import style from "./ThisPc.module.css";
 import avatarImg from "../../images/Avatar1remove.png";
+import Home from "../Home/Home";
+import { Link } from "react-router-dom";
 
 export default function ThisPc() {
-  const [open, setOpen] = useState(false);
-
-  const handleClickFolder = () => {
-    setOpen(!open);
-    if (open) {
-      document.getElementById("folderThisPc").style.display = "none";
-    } else {
-      document.getElementById("folderThisPc").style.display = "block";
-    }
-  };
-
-  const handleClose = () => {
-    document.getElementById("folderThisPc").style.display = "none";
-    setOpen(false);
-  };
-
   return (
     <div>
-      <div onClick={handleClickFolder} className={style.cotainerThisPc}>
-        <img className={style.folderImg} src={FolderImg} alt="Folder" />
-        <p className={style.folderName}>This Pc</p>
-      </div>
-      <div id="folderThisPc" className={style.containerFolder}>
+      <Home />
+      <div className={style.containerFolder}>
         <div className={style.containerLineSup}>
           <img
             className={style.folderImgInside}
@@ -35,9 +17,9 @@ export default function ThisPc() {
             alt="Folder Inside"
           />
           <p className={style.folderNameInside}>This Pc</p>
-          <button onClick={handleClose} className={style.buttonFolder}>
-            X
-          </button>
+          <Link className={style.link} to="/home">
+            <button className={style.buttonFolder}>X</button>
+          </Link>
         </div>
         <div>
           <div className={style.containerText}>

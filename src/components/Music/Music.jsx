@@ -1,33 +1,15 @@
 import React from "react";
-import { useState } from "react";
 import style from "./Music.module.css";
 import FolderMusic from "../../images/ondas-sonoras.png";
 import ReactPlayer from "react-player";
+import Home from "../Home/Home";
+import { Link } from "react-router-dom";
 
 export default function Music() {
-  const [open, setOpen] = useState(false);
-
-  const handleClickFolder = () => {
-    setOpen(!open);
-    if(open){
-      document.getElementById("folderMusic").style.display = "none";
-    } else {
-      document.getElementById("folderMusic").style.display = "block";
-    }
-  };
-
-  const handleClose = () => {
-    document.getElementById("folderMusic").style.display = "none";
-    setOpen(false);
-  };
-
   return (
     <div>
-      <div onClick={handleClickFolder} className={style.cotainerSocial}>
-        <img className={style.folderImg} src={FolderMusic} alt="Folder" />
-        <p className={style.folderName}>Music</p>
-      </div>
-      <div id="folderMusic" className={style.containerFolder}>
+      <Home />
+      <div className={style.containerFolder}>
         <div className={style.containerLineSup}>
           <img
             className={style.folderImgInside}
@@ -35,9 +17,9 @@ export default function Music() {
             alt="Folder Inside"
           />
           <p className={style.folderNameInside}>Music</p>
-          <button onClick={handleClose} className={style.buttonFolder}>
-            X
-          </button>
+          <Link className={style.link} to="/home">
+            <button className={style.buttonFolder}>X</button>
+          </Link>
         </div>
         <div className={style.containerPlayer}>
           <ReactPlayer

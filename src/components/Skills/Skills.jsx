@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import style from "./Skills.module.css";
 import FolderImg from "../../images/folder_desktop.png";
 import ReactImg from "../../images/react.png";
@@ -16,30 +15,13 @@ import DockerImg from "../../images/docker-96.png";
 import SlackImg from "../../images/slack-new-96.png";
 import TrelloImg from "../../images/trello-96.png";
 import FigmaImg from "../../images/figma-96.png";
+import Home from "../Home/Home";
+import { Link } from "react-router-dom";
 
 export default function Skills() {
-  const [open, setOpen] = useState(false);
-
-  const handleClickFolder = () => {
-    setOpen(!open);
-    if (open) {
-      document.getElementById("folderSkills").style.display = "none";
-    } else {
-      document.getElementById("folderSkills").style.display = "block";
-    }
-  };
-
-  const handleClose = () => {
-    document.getElementById("folderSkills").style.display = "none";
-    setOpen(false);
-  };
-
   return (
     <div>
-      <div onClick={handleClickFolder} className={style.cotainerSkills}>
-        <img className={style.folderImg} src={FolderImg} alt="Folder" />
-        <p className={style.folderName}>Skills</p>
-      </div>
+      <Home />
       <div id="folderSkills" className={style.containerFolder}>
         <div className={style.containerLineSup}>
           <img
@@ -48,9 +30,9 @@ export default function Skills() {
             alt="Folder Inside"
           />
           <p className={style.folderNameInside}>Skills</p>
-          <button onClick={handleClose} className={style.buttonFolder}>
-            X
-          </button>
+          <Link className={style.link} to="/home">
+            <button className={style.buttonFolder}>X</button>
+          </Link>
         </div>
         <div>
           <div>

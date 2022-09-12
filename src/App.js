@@ -1,6 +1,11 @@
 import React from "react";
 import Home from "./components/Home/Home";
 import PowerOn from "./components/PowerOn/PowerOn";
+import ThisPc from "./components/ThisPc/ThisPc";
+import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
+import Music from "./components/Music/Music";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -10,6 +15,11 @@ function App() {
         <Routes>
           <Route path="/" element={<PowerOn />} />
           <Route exact path="/home" element={<Home />} />
+          <Route exact path="/thispc" element={<ThisPc />} />
+          <Route exact path="/skills" element={<Skills />} />
+          <Route exact path="/projects" element={<Projects />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/music" element={<Music />} />
         </Routes>
       </BrowserRouter>
     </>
