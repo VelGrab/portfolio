@@ -16,11 +16,12 @@
 
 .folderName {
     color: #fff;
+    font-weight: 600;
 }
 
 .containerFolder {
     width: 50%;
-    height: 60%;
+    height: 70%;
     background-color: rgba(3, 3, 3, 0.731);
     position: absolute;
     right: 0;

@@ -1,19 +1,24 @@
 import React from 'react'
+import { useState } from 'react';
 import style from './Contact.module.css'
 import FolderContact from '../../images/correo.png'
 
 export default function Contact() {
-    const handleClickFolder = () => {
-        if(document.getElementById('folderContact').style.display === 'block'){
-          document.getElementById('folderContact').style.display = 'none'
-        } else {
-          document.getElementById('folderContact').style.display = 'block'
-        }
-      }
-    
-      const handleClose = () => {
-        document.getElementById('folderContact').style.display = 'none'
-      }
+  const [open, setOpen] = useState(false);
+
+  const handleClickFolder = () => {
+    setOpen(!open);
+    if(open){
+      document.getElementById("folderContact").style.display = "none";
+    } else {
+      document.getElementById("folderContact").style.display = "block";
+    }
+  };
+
+  const handleClose = () => {
+    document.getElementById("folderContact").style.display = "none";
+    setOpen(false);
+  };
   return (
     <div>
       <div onClick={handleClickFolder} className={style.cotainerSocial}>

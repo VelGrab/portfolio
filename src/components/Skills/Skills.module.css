@@ -1,0 +1,238 @@
+.cotainerSkills {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  line-height: 0px;
+  cursor: pointer;
+  width: 50px;
+  margin-top: 20px;
+}
+
+.folderImg {
+  width: 50px;
+  height: 50px;
+}
+
+.folderName {
+  color: #fff;
+  font-weight: 600;
+}
+
+.containerFolder {
+  width: 50%;
+  height: 75%;
+  background-color: rgba(3, 3, 3, 0.87);
+  position: absolute;
+  right: 0;
+  margin-right: 10rem;
+  display: none;
+}
+
+.folderImgInside {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}
+.containerLineSup {
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.363);
+  display: flex;
+  justify-content: space-between;
+}
+
+.folderNameInside {
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.buttonFolder {
+  width: 25px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+
+.buttonFolder:hover {
+  color: #000;
+  background-color: rgba(248, 0, 0, 0.768);
+  transition: all 0.3s ease-in-out;
+}
+
+.containerText {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #fff;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #fff;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 0px;
+  font-size: 1.3rem;
+}
+
+.containerText p {
+  color: #fff;
+  font-weight: 400;
+  margin-top: 10px;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 1.1rem;
+}
+
+.containerAllImages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.containerAllTools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+
+.reactImg,
+.jsImg,
+.htmlImg,
+.cssImg,
+.nodeImg,
+.expressImg,
+.mongoImg,
+.postgreImg,
+.gitImg,
+.githubImg,
+.figmaImg,
+.dockerImg,
+.slackImg,
+.trelloImg {
+  width: 45px;
+  height: 45px;
+}
+
+.reactImg:hover {
+  filter: drop-shadow(0px 0px 2px #61dafb);
+}
+
+.jsImg:hover {
+  filter: drop-shadow(0px 0px 2px #f7df1e);
+}
+
+.htmlImg:hover {
+  filter: drop-shadow(0px 0px 2px #e34c26);
+}
+
+.cssImg:hover {
+  filter: drop-shadow(0px 0px 2px #2965f1);
+}
+
+.nodeImg:hover {
+  filter: drop-shadow(0px 0px 2px #339933);
+}
+
+.expressImg:hover {
+  filter: drop-shadow(0px 0px 2px #ffffff);
+}
+
+.mongoImg:hover {
+  filter: drop-shadow(0px 0px 2px #47a248);
+}
+
+.postgreImg:hover {
+  filter: drop-shadow(0px 0px 2px #336791);
+}
+
+.gitImg:hover {
+  filter: drop-shadow(0px 0px 2px #f05032);
+}
+
+.githubImg:hover {
+  filter: drop-shadow(0px 0px 2px #181717);
+}
+
+.figmaImg:hover {
+  filter: drop-shadow(0px 0px 2px #f24e1e);
+}
+
+.dockerImg:hover {
+  filter: drop-shadow(0px 0px 2px #2496ed);
+}
+
+.slackImg:hover {
+  filter: drop-shadow(0px 0px 2px #cb0ccf);
+}
+
+.trelloImg:hover {
+  filter: drop-shadow(0px 0px 2px #0079bf);
+}
+
+.containerReact,
+.containerJs,
+.containerHtml,
+.containerCss,
+.containerNode,
+.containerExpress,
+.containerMongo,
+.containerPostgre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.paragraph {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 0;
+  font-weight: 500;
+}
+
+.containerReact:hover,
+.containerJs:hover,
+.containerHtml:hover,
+.containerCss:hover,
+.containerNode:hover,
+.containerExpress:hover,
+.containerMongo:hover,
+.containerPostgre:hover,
+.containerGit:hover,
+.containerGithub:hover,
+.containerFigma:hover,
+.containerDocker:hover,
+.containerSlack:hover,
+.containerTrello:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.skills {
+  color: #fff;
+  font-weight: 600;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1.4rem;
+}
