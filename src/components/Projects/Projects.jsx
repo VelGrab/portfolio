@@ -4,7 +4,10 @@ import FolderProjects from "../../images/folder_desktop.png";
 import Home from "../Home/Home";
 import NomadePortfolio from "../../images/Nomade_Portfolio2.png";
 import VideogamesPortfolio from "../../images/videogamesPortfolio2.PNG";
-import ratingPortfolio from "../../images/ratingPortfolio2.PNG";
+import ratingPortfolio from "../../images/ratingPortfolio3.PNG";
+import nomadeInside from "../../images/Nomade_Portfolio.PNG"
+import ratingInside from "../../images/ratingPortfolio.PNG"
+import videogamesInside from "../../images/videogamesPortfolio.PNG"
 import { Link } from "react-router-dom";
 
 export default function Projects() {
@@ -35,6 +38,7 @@ export default function Projects() {
                 src={NomadePortfolio}
                 alt="Nomade Img"
               ></img>
+              <img className={style.nomadeInside} src={nomadeInside} alt='inside img'></img>
             </a>
           </div>
           <div className={style.containerTwo}>
@@ -48,6 +52,7 @@ export default function Projects() {
                 src={VideogamesPortfolio}
                 alt="Videogames Img"
               ></img>
+              <img className={style.videogameInside} src={videogamesInside} alt='inside img'></img>
             </a>
           </div>
           <div className={style.containerThree}>
@@ -61,6 +66,7 @@ export default function Projects() {
                 src={ratingPortfolio}
                 alt="Rating Img"
               ></img>
+              <img className={style.ratingInside} src={ratingInside} alt='inside img'></img>
             </a>
           </div>
         </div>

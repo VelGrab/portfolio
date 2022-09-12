@@ -70,6 +70,7 @@
     margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
+    position: relative;
 }
 
 .nomadeImg {
@@ -81,8 +82,8 @@
 .containerOne:hover,
 .containerTwo:hover,
 .containerThree:hover {
-    transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
+    transform: scale(1.01);
+    transition: all 0.6s ease-in-out;
 }
 
 .targetA {
@@ -94,4 +95,24 @@
         width: 90%;
         /* height: 100%; */
     }
+}
+
+.ratingInside, .videogameInside,
+.nomadeInside {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
+.containerThree:hover .ratingInside,
+.containerTwo:hover .videogameInside,
+.containerOne:hover .nomadeInside {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform: scale(1.01);
 }
