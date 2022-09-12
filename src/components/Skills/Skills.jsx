@@ -22,7 +22,7 @@ export default function Skills() {
   return (
     <div>
       <Home />
-      <div id="folderSkills" className={style.containerFolder}>
+      <div className={style.containerFolder}>
         <div className={style.containerLineSup}>
           <img
             className={style.folderImgInside}

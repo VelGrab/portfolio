@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div>
       <Home />
-      <div id="folderContact" className={style.containerFolder}>
+      <div className={style.containerFolder}>
         <div className={style.containerLineSup}>
           <img
             className={style.folderImgInside}

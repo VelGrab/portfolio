@@ -52,7 +52,7 @@ export default function ThisPc() {
               </p>
               <p>
                 I invite you to know my portfolio, you can explore the different
-                folders to discover more about me
+                folders to discover more about me.
               </p>
             </div>
           </div>
