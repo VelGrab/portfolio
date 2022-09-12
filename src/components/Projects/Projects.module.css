@@ -1,10 +1,10 @@
 .containerFolder {
     width: 50%;
-    height: 70%;
+    height: 70vh;
     background-color: rgba(3, 3, 3, 0.87);
-    position: absolute;
     right: 0;
-    margin-right: 10rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .folderImgInside {
@@ -53,7 +53,7 @@
 
 .containerProjects {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     height: 100%;
     width: 100%;
@@ -62,8 +62,8 @@
 .containerOne,
 .containerTwo,
 .containerThree {
-    width: 170px;
-    height: 170px;
+    width: 140px;
+    height: 140px;
     text-align: center;
     margin-top: 50px;
     margin-left: 10px;
@@ -78,12 +78,6 @@
     border-radius: 5px;
 }
 
-.projectName {
-    color: #fff;
-    margin-top: 5px;
-    font-weight: 600;
-}
-
 .containerOne:hover,
 .containerTwo:hover,
 .containerThree:hover {
@@ -93,4 +87,11 @@
 
 .targetA {
     text-decoration: none;
+}
+
+@media screen and (max-width: 938px) {
+    .containerFolder {
+        width: 90%;
+        /* height: 100%; */
+    }
 }

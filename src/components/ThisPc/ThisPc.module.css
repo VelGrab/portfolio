@@ -1,10 +1,10 @@
 .containerFolder {
     width: 50%;
-    height: 70%;
+    height: 70vh;
     background-color: rgba(3, 3, 3, 0.87);
-    position: absolute;
     right: 0;
-    margin-right: 10rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .folderImgInside {
@@ -68,7 +68,7 @@
     font-weight: 600;
     margin-left: 90px;
     margin-top: 50px;
-    font-size: 2rem;
+    font-size: 3rem;
     width: 16ch;
     overflow: hidden;
     animation: typing 2s steps(12), blink .5s infinite step-end alternate;
@@ -113,4 +113,18 @@
     align-items: flex-start;
     flex-wrap: wrap;
     width: 100%;
+}
+
+
+@media screen and (max-width: 938px) {
+    .containerFolder {
+        width: 90%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .title {
+        margin-left: 0px;
+    }
 }
