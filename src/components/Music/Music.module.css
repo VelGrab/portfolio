@@ -56,3 +56,11 @@
     background-color: rgba(248, 0, 0, 0.768);
     transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 938px) {
+    .containerFolder {
+        width: 90%;
+        height: 70vh;
+        margin-top: 20px;
+    }
+}

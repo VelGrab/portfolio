@@ -8,6 +8,8 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import Linkedin from "../../images/linkedin.png";
 import Github from "../../images/github.png";
+import Curriculum from "../../images/curriculum.png";
+import pdf from '../../images/cvJulioCesar.pdf'
 
 export default function Contact() {
   const form = useRef();
@@ -99,11 +101,23 @@ export default function Contact() {
                 <p className={style.text}>Linkedin</p>
               </a>
             </div>
+            <div className={style.containerCv}>
+              <img
+                className={style.curriculum}
+                src={Curriculum}
+                alt="Curriculum"
+              ></img>
+              <button className={style.buttonCV}>
+                <a href={pdf} target="__blank" rel="noopener noreferrer" download={pdf} className={style.textCV}>
+                Descargar cv
+                </a>
+              </button>
+            </div>
             <div>
-            <a href="https://github.com/VelGrab" target="__blank">
-              <img className={style.github} src={Github} alt="Github"></img>
-              <p className={style.text}>Github</p>
-            </a>
+              <a href="https://github.com/VelGrab" target="__blank">
+                <img className={style.github} src={Github} alt="Github"></img>
+                <p className={style.text}>Github</p>
+              </a>
             </div>
           </div>
         </div>

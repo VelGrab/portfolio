@@ -132,3 +132,47 @@
     transition: all 0.3s ease-in-out;
     filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.431));
 }
+
+.containerCv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.buttonCV {
+    height: 25px;
+    width: 100px;
+    margin-top: 15px;
+    background-color: #00ACEA;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttonCV a {
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.buttonCV:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.curriculum {
+    width: 50px;
+    height: 50px;
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 938px) {
+    .containerFolder {
+        width: 90%;
+        height: 100%;
+        margin-top: 20px;
+    }
+}

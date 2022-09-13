@@ -104,10 +104,25 @@
   width: 250px;
   height: 400px;
   margin-bottom: 39px;
-  background-color: rgba(0, 0, 0, 0.83);
+  background-color: rgb(0, 0, 0);
   bottom: 0;
   border: 1px solid rgb(105, 105, 105);
   border-radius: 5px 5px 0px 0px;
-  z-index: 100;
-  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 580px) {
+  .input {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .input {
+    width: 100px;
+    padding-left: 30px;
+    font-size: 11px;
+  }
+  .hourContainer {
+    margin-right: 5px;
+  }
 }

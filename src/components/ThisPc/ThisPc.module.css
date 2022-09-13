@@ -120,11 +120,14 @@
     .containerFolder {
         width: 90%;
         height: 100%;
+        margin-top: 20px;
     }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 442px) {
     .title {
         margin-left: 0px;
+        font-size: 1.5rem;
+        margin-top: 35px;
     }
 }
