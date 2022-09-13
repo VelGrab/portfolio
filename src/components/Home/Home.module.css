@@ -1,7 +1,5 @@
 body {
-    background-image: url(../../images/bg-desktop.png);
-    background-repeat: no-repeat;
-    font-family: 'Roboto'
+    font-family: 'Roboto';
 }
 
 .containerFoldersDesktop {
