@@ -127,7 +127,12 @@
 @media screen and (max-width: 442px) {
     .title {
         margin-left: -10px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin-top: 35px;
+    }
+
+    .avatarImg {
+        width: 100px;
+        height: 100px;
     }
 }

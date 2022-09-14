@@ -160,13 +160,14 @@
     font-size: 11px;
   }
   .hourContainer {
-    margin-right: 5px;
+    margin-left: 5px;
   }
   .imageFolder,
-  .imageWindows {
+  .imageWindows,
+  .imageVsCode,
+  .taskImage {
+    margin-top: 5px;
     width: 30px;
     height: 30px;
-    margin-left: 10px;
-    cursor: pointer;
   }
 }
