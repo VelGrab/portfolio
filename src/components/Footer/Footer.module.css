@@ -108,6 +108,43 @@
   bottom: 0;
   border: 1px solid rgb(105, 105, 105);
   border-radius: 5px 5px 0px 0px;
+  z-index: 2;
+}
+
+.thisPcFolder,
+.folderProjects,
+.folderSkills,
+.folderMusic,
+.folderContact {
+  margin-left: 10px;
+  width: 70px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thisPcFolder p,
+.folderProjects p,
+.folderSkills p,
+.folderMusic p,
+.folderContact p {
+  color: #fff;
+  line-height: 0;
+}
+
+.thisPcFolder img,
+.folderProjects img,
+.folderSkills img,
+.folderMusic img,
+.folderContact img {
+  height: 30px;
+  width: 30px;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 580px) {
@@ -124,5 +161,12 @@
   }
   .hourContainer {
     margin-right: 5px;
+  }
+  .imageFolder,
+  .imageWindows {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
   }
 }

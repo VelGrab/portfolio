@@ -6,6 +6,12 @@ import search from "../../images/search.png";
 import task from "../../images/task.png";
 import vsCode from "../../images/icons8-visual-studio-code-2019-48.png";
 import folder from "../../images/folder.png";
+import FolderImg from "../../images/desktop-computer.png";
+import FolderSkills from "../../images/folder_desktop.png";
+import FolderProjects from "../../images/folder_desktop.png";
+import FolderMusic from "../../images/ondas-sonoras.png";
+import FolderContact from "../../images/correo.png";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export default function Footer() {
@@ -55,6 +61,36 @@ export default function Footer() {
         ></img>
       </div>
       <div id="window" className={style.popUpContainerWindow}>
+        <div className={style.thisPcFolder}>
+          <Link className={style.link} to='/thispc'>
+          <img src={FolderImg} alt='ThisPc Img'></img>
+          <p>This Pc</p>
+          </Link>
+        </div>
+        <div className={style.folderProjects}>
+          <Link className={style.link} to='/skills'>
+          <img src={FolderSkills} alt='FolderSkills Img'></img>
+          <p>Skills</p>
+          </Link>
+        </div>
+        <div className={style.folderSkills}>
+          <Link className={style.link} to='/projects'>
+          <img src={FolderProjects} alt='FolderProjects Img'></img>
+          <p>Projects</p>
+          </Link>
+        </div>
+        <div className={style.folderContact}>
+          <Link className={style.link} to='/contact'>
+          <img src={FolderContact} alt='FolderContact Img'></img>
+          <p>Contact</p>
+          </Link>
+        </div>
+        <div className={style.folderMusic}>
+          <Link className={style.link} to='/music'>
+          <img src={FolderMusic} alt='FolderMusic Img'></img>
+          <p>Music</p>
+          </Link>
+        </div>
       </div>
       <div className={style.containerInput}>
         <form onSubmit={handleSearch}>
