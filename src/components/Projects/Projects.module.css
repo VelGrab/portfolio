@@ -61,7 +61,8 @@
 
 .containerOne,
 .containerTwo,
-.containerThree {
+.containerThree,
+.containerFour {
     width: 140px;
     height: 140px;
     text-align: center;
@@ -82,7 +83,8 @@
 
 .containerOne:hover,
 .containerTwo:hover,
-.containerThree:hover {
+.containerThree:hover,
+.containerFour:hover {
     transform: scale(1.01);
     transition: all 0.5s ease-in-out;
 }
@@ -92,7 +94,7 @@
 }
 
 .ratingInside, .videogameInside,
-.nomadeInside {
+.nomadeInside, .jcVideoInside {
     position: absolute;
     left: 10px;
     width: 100%;
@@ -105,7 +107,8 @@
 
 .containerThree:hover .ratingInside,
 .containerTwo:hover .videogameInside,
-.containerOne:hover .nomadeInside {
+.containerOne:hover .nomadeInside,
+.containerFour:hover .jcVideoInside {
     display: flex;
     width: 100%;
     height: 100%;
