@@ -22,15 +22,15 @@ export default function ThisPc() {
           </Link>
         </div>
         <div>
+          <div className={style.avatarContainer}>
+            <img
+              className={style.avatarImg}
+              src={avatarImg}
+              alt="Avatar Img"
+            ></img>
+          </div>
           <div className={style.containerText}>
             <div className={style.containerTitleImg}>
-              <div>
-                <img
-                  className={style.avatarImg}
-                  src={avatarImg}
-                  alt="Avatar Img"
-                ></img>
-              </div>
               <div>
                 <h2 className={style.title}>Hi, I'm Julio Cesar</h2>
               </div>
@@ -40,19 +40,19 @@ export default function ThisPc() {
             </div>
             <div>
               <p>
-                I am a person passionate about technology, proactive with a
-                great desire to improve and willing to demonstrate all my
-                skills.
+                I am a passionate technology enthusiast, proactive, and always
+                eager to improve. I am keen to showcase my skills and
+                capabilities.
               </p>
               <p>
-                I define myself as a person who likes to learn new things, I am
-                always looking for new challenges and i am willing to learn new
-                things, i like to work in a team, help others and share
-                knowledge.
+                I define myself as a lifelong learner, constantly seeking new
+                challenges and opportunities for growth. I enjoy working in
+                teams, helping others, and sharing knowledge.
               </p>
               <p>
-                I invite you to know my portfolio, you can explore the different
-                folders to discover more about me.
+                I invite you to explore my portfolio. Feel free to browse
+                through the different sections to learn more about me and my
+                work.
               </p>
             </div>
           </div>

@@ -84,6 +84,10 @@
     font-size: 1.3rem;
 }
 
+.avatarContainer {
+    position: absolute;
+}
+
 .containerText p {
     color: #fff;
     font-weight: 400;
@@ -111,7 +115,7 @@
 .containerTitleImg {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     width: 100%;
@@ -128,7 +132,6 @@
 
 @media screen and (max-width: 442px) {
     .title {
-        margin-left: -10px;
         font-size: 1.4rem;
         margin-top: 35px;
     }
