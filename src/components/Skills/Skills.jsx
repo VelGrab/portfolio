@@ -1,20 +1,23 @@
 import React from "react";
 import style from "./Skills.module.css";
 import FolderImg from "../../images/folder_desktop.png";
-import ReactImg from "../../images/react.png";
+import SvelteImg from "../../images/svelte-logo-cutout.svg";
 import JavascriptImg from "../../images/javascript.png";
 import HtmlImg from "../../images/html.png";
 import CssImg from "../../images/css-3.png";
 import NodeImg from "../../images/nodejs.png";
 import ExpressImg from "../../images/expressjs.png";
 import MongodbImg from "../../images/mongodb.png";
-import PostgresqlImg from "../../images/postgresql.png";
+import MariaDBImg from "../../images/MariaDB.png";
 import GitImg from "../../images/git-96.png";
 import GithubImg from "../../images/github.png";
 import DockerImg from "../../images/docker-96.png";
 import SlackImg from "../../images/slack-new-96.png";
 import TrelloImg from "../../images/trello-96.png";
 import FigmaImg from "../../images/figma-96.png";
+import GoImg from "../../images/go-logo.png";
+import RubyImg from "../../images/ruby.png";
+import NavicatImg from "../../images/Navicat-Logo.png";
 import Home from "../Home/Home";
 import { Link } from "react-router-dom";
 
@@ -42,10 +45,10 @@ export default function Skills() {
             <div className={style.containerReact}>
               <img
                 className={style.reactImg}
-                src={ReactImg}
-                alt="React Img"
+                src={SvelteImg}
+                alt="Svelte Img"
               ></img>
-              <p className={style.paragraph}>React</p>
+              <p className={style.paragraph}>Svelte</p>
             </div>
             <div className={style.containerJs}>
               <img
@@ -57,11 +60,11 @@ export default function Skills() {
             </div>
             <div className={style.containerHtml}>
               <img className={style.htmlImg} src={HtmlImg} alt="Html Img"></img>
-              <p className={style.paragraph}>Html</p>
+              <p className={style.paragraph}>HTML</p>
             </div>
             <div className={style.containerCss}>
               <img className={style.cssImg} src={CssImg} alt="Css Img"></img>
-              <p className={style.paragraph}>Css</p>
+              <p className={style.paragraph}>CSS</p>
             </div>
             <div className={style.containerNode}>
               <img className={style.nodeImg} src={NodeImg} alt="Node Img"></img>
@@ -86,10 +89,18 @@ export default function Skills() {
             <div className={style.containerPostgre}>
               <img
                 className={style.postgreImg}
-                src={PostgresqlImg}
-                alt="Postgresql Img"
+                src={MariaDBImg}
+                alt="MariaDB Img"
               ></img>
-              <p className={style.paragraph}>PostgreSQL</p>
+              <p className={style.paragraph}>MariaDB</p>
+            </div>
+            <div className={style.containerRuby}>
+              <img className={style.rubyImg} src={RubyImg} alt="Ruby Img"></img>
+              <p className={style.paragraph}>Ruby</p>
+            </div>
+            <div className={style.containerGo}>
+              <img className={style.goImg} src={GoImg} alt="Go Img"></img>
+              <p className={style.paragraph}>Go</p>
             </div>
           </div>
         </div>
@@ -140,6 +151,14 @@ export default function Skills() {
               alt="Figma Img"
             ></img>
             <p className={style.paragraph}>Figma</p>
+          </div>
+          <div className={style.containerNavicat}>
+            <img
+              className={style.navicatImg}
+              src={NavicatImg}
+              alt="Navicat Img"
+            ></img>
+            <p className={style.paragraph}>Navicat</p>
           </div>
         </div>
       </div>

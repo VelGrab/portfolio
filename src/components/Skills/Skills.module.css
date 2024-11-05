@@ -5,6 +5,7 @@
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
 }
 
 .folderImgInside {
@@ -12,6 +13,7 @@
   height: 25px;
   margin-left: 5px;
 }
+
 .containerLineSup {
   width: 100%;
   height: 30px;
@@ -73,19 +75,11 @@
   font-size: 1.1rem;
 }
 
-.containerAllImages {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-
+.containerAllImages,
 .containerAllTools {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
+  justify-content: space-around;
   margin-top: 40px;
 }
 
@@ -102,9 +96,24 @@
 .figmaImg,
 .dockerImg,
 .slackImg,
-.trelloImg {
+.trelloImg,
+.rubyImg,
+.goImg,
+.navicatImg {
   width: 45px;
   height: 45px;
+}
+
+.rubyImg:hover {
+  filter: drop-shadow(0px 0px 2px #cc342d);
+}
+
+.goImg:hover {
+  filter: drop-shadow(0px 0px 2px #00add8);
+}
+
+.navicatImg:hover {
+  filter: drop-shadow(0px 0px 2px #13b5ea);
 }
 
 .reactImg:hover {
@@ -170,18 +179,26 @@
 .containerNode,
 .containerExpress,
 .containerMongo,
-.containerPostgre {
+.containerPostgre,
+.containerGit,
+.containerGithub,
+.containerFigma,
+.containerDocker,
+.containerSlack,
+.containerTrello,
+.containerRuby,
+.containerGo,
+.containerNavicat {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .paragraph {
   color: rgb(255, 255, 255);
   text-align: center;
-  line-height: 0;
+  line-height: 1.2;
   font-weight: 500;
 }
 
@@ -229,8 +246,56 @@
 
 @media screen and (max-width: 938px) {
   .containerFolder {
-      width: 90%;
-      height: 100%;
-      margin-top: 20px;
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .containerAllImages,
+  .containerAllTools {
+    justify-content: center;
+  }
+
+  .containerReact,
+  .containerJs,
+  .containerHtml,
+  .containerCss,
+  .containerNode,
+  .containerExpress,
+  .containerMongo,
+  .containerPostgre,
+  .containerGit,
+  .containerGithub,
+  .containerFigma,
+  .containerDocker,
+  .containerSlack,
+  .containerTrello {
+    margin: 5px;
+  }
+
+  .reactImg,
+  .jsImg,
+  .htmlImg,
+  .cssImg,
+  .nodeImg,
+  .expressImg,
+  .mongoImg,
+  .postgreImg,
+  .gitImg,
+  .githubImg,
+  .figmaImg,
+  .dockerImg,
+  .slackImg,
+  .trelloImg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .skills {
+    font-size: 1.2rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
   }
 }

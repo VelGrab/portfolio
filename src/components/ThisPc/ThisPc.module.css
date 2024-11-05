@@ -1,4 +1,5 @@
 .containerFolder {
+    margin-top: 1rem;
     width: 50%;
     height: 70vh;
     background-color: rgba(3, 3, 3, 0.87);
@@ -62,14 +63,14 @@
 
 .title {
     color: rgb(14, 193, 221);
-    display: flex;
+    display: inline-block;
     white-space: nowrap;
     border-right: 3px solid;
     font-weight: 600;
     margin-left: 30px;
     margin-top: 50px;
     font-size: 3rem;
-    width: 16ch;
+    width: auto;
     overflow: hidden;
     animation: typing 2s steps(12), blink .5s infinite step-end alternate;
 }
@@ -95,6 +96,7 @@
 
 @keyframes typing {
     from { width: 0}
+    to { width: 100%}
 }
 
 @keyframes blink {

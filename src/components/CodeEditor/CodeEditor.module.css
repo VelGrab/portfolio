@@ -1,0 +1,262 @@
+.code-editor-card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 3rem auto;
+  background-color: #1E1E1E;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  background-color: #252526;
+  padding: 8px 16px;
+  border-bottom: 1px solid #3C3C3C;
+  height: 32px;
+}
+
+.editor-title {
+  font-size: 13px;
+  color: #CCCCCC;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin-right: auto;
+}
+
+.run-button {
+  background-color: #0098FF;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 16px;
+}
+
+.run-button:hover {
+  background-color: #1AA7FF;
+}
+
+.run-button::before {
+  content: "▶";
+  font-size: 10px;
+}
+
+.window-controls {
+  display: flex;
+  height: 32px;
+}
+
+.control {
+  width: 46px;
+  height: 100%;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.control::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: none;
+}
+
+/* Minimizar */
+.control.yellow::before {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: #CCCCCC;
+  position: absolute;
+  top: 50%;
+}
+
+/* Maximizar */
+.control.green::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 1px solid #CCCCCC;
+  position: absolute;
+}
+
+/* Cerrar */
+.control.red::before,
+.control.red::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 1px;
+  background-color: #CCCCCC;
+}
+
+.control.red::before {
+  transform: rotate(45deg);
+}
+
+.control.red::after {
+  transform: rotate(-45deg);
+}
+
+/* Efectos hover */
+.control:hover {
+  background-color: #3C3C3C;
+}
+
+.control.red:hover {
+  background-color: #E81123;
+}
+
+.control.red:hover::before,
+.control.red:hover::after {
+  background-color: #FFFFFF;
+}
+
+/* Orden de los botones */
+.window-controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.redLink {
+  order: 3;
+}
+
+.control.yellow { order: 1; }
+.control.green { order: 2; }
+.control.red { order: 3; }
+
+.editor-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 400px;
+}
+
+.code-panel {
+  height: 100%;
+  border-right: 1px solid #3C3C3C;
+  position: relative;
+  z-index: 1;
+}
+
+.code-textarea {
+  width: 100%;
+  height: 100%;
+  background-color: #1E1E1E;
+  color: #D4D4D4;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 16px;
+  padding-left: 50px;
+  border: none;
+  resize: none;
+}
+
+.code-textarea:focus {
+  outline: none;
+}
+
+.code-textarea::selection {
+  background-color: #264F78;
+}
+
+.output-panel {
+  position: relative;
+  background-color: #1E1E1E;
+  height: 100%;
+  z-index: 2;
+}
+
+.console-header {
+  padding: 8px 12px;
+  background-color: #252526;
+  color: #CCCCCC;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid #3C3C3C;
+}
+
+.console-content {
+  padding: 12px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  height: calc(100% - 36px);
+  overflow-y: auto;
+}
+
+.output-text {
+  color: #9CDCFE;
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.error-text {
+  color: #F48771;
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Scrollbar estilo VS Code */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4F4F4F;
+}
+
+/* Líneas de numeración */
+.code-panel::before {
+  content: "1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 30px;
+  color: #858585;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: right;
+  padding-right: 10px;
+  user-select: none;
+  white-space: pre;
+}
+
+/* Efecto de cursor */
+.code-textarea:focus::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background-color: #CCCCCC;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}

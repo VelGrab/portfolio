@@ -4,8 +4,8 @@ import FolderSkills from "../../images/folder_desktop.png";
 import FolderProjects from "../../images/folder_desktop.png";
 import FolderMusic from "../../images/ondas-sonoras.png";
 import FolderContact from "../../images/correo.png";
+import vsCode from "../../images/icons8-visual-studio-code-2019-48.png";
 import { Link } from "react-router-dom";
-import Footer from "../Footer/Footer";
 import style from "./Home.module.css";
 
 export default function Home() {
@@ -46,8 +46,13 @@ export default function Home() {
             <p className={style.folderName}>Music</p>
           </div>
         </Link>
+        <Link className={style.link} to="/code-editor">
+          <div className={style.cotainerContact}>
+            <img className={style.folderImg} src={vsCode} alt="Folder" />
+            <p className={style.folderName}>VS Code</p>
+          </div>
+        </Link>
       </div>
-      <Footer />
     </div>
   );
 }

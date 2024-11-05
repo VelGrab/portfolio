@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import Linkedin from "../../images/linkedin.png";
 import Github from "../../images/github.png";
 import Curriculum from "../../images/curriculum.png";
-import pdf from '../../images/cvJulioCesar.pdf'
+import pdf from '../../images/cvJulioPena.pdf'
 
 export default function Contact() {
   const form = useRef();

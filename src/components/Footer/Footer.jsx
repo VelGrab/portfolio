@@ -11,15 +11,17 @@ import FolderSkills from "../../images/folder_desktop.png";
 import FolderProjects from "../../images/folder_desktop.png";
 import FolderMusic from "../../images/ondas-sonoras.png";
 import FolderContact from "../../images/correo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export default function Footer() {
   const [hour, setHour] = useState("");
   const [input, setInput] = useState("");
 
+  const navigate = useNavigate();
+
   const handleVsCode = () => {
-    window.open("https://code.visualstudio.com/");
+    navigate("/code-editor");
   };
 
   const handleSearch = (e) => {

@@ -6,6 +6,8 @@ import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Music from "./components/Music/Music";
+import Footer from "./components/Footer/Footer";
+import CodeEditor from "./components/CodeEditor/CodeEditor";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -20,7 +22,10 @@ function App() {
           <Route exact path="/projects" element={<Projects />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/music" element={<Music />} />
+          <Route exact path="/music" element={<Music />} />
+          <Route exact path="/code-editor" element={<CodeEditor />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
