@@ -2,59 +2,83 @@ body {
   font-family: "Roboto";
 }
 
+.desktopContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
 .containerFoldersDesktop {
   width: 100%;
   height: 100%;
-  display: flex;
+  position: relative;
 }
 
-.cotainerThisPc,
-.cotainerSkills,
-.cotainerMusic,
-.cotainerContact,
-.cotainerProjects {
+.iconWrapper {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+  width: 70px;
+}
+
+.iconContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
   text-align: center;
-  line-height: 0px;
-  cursor: pointer;
-  width: 70px;
-  margin-top: 20px;
+  padding: 8px;
+  transition: background-color 0.2s;
+}
+
+.iconContainer:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.iconContainer:active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .folderImg {
   width: 50px;
   height: 50px;
+  pointer-events: none; /* Evita problemas con el arrastre */
 }
 
 .folderName {
   color: #fff;
   font-weight: 600;
   width: 100%;
+  margin: 8px 0;
+  pointer-events: none; /* Evita problemas con el arrastre */
 }
 
 .link {
   text-decoration: none;
+  width: 100%;
+  display: block;
 }
 
+/* Media Query para móviles */
 @media screen and (max-width: 442px) {
-  .cotainerThisPc,
-  .cotainerSkills,
-  .cotainerMusic,
-  .cotainerContact,
-  .cotainerProjects {
+  .iconWrapper {
     width: 100%;
-    margin-left: 10px;
+    max-width: 60px;
   }
 
   .folderImg {
     width: 40px;
     height: 40px;
   }
+
   .folderName {
     font-size: 16px;
+  }
+  
+  /* Ajustar el espaciado en móviles */
+  .iconContainer {
+    padding: 4px;
   }
 }
