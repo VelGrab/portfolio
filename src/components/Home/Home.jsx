@@ -47,7 +47,6 @@ export default function Home() {
       [id]: { x: data.x, y: data.y }
     }));
   
-    // Aumentamos el umbral de tiempo y movimiento
     if (dragDuration < 300 && deltaX < 10 && deltaY < 10) {
       setTimeout(() => {
         navigate(to);
