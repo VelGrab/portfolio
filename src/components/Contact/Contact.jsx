@@ -11,6 +11,10 @@ import Github from "../../images/github.png";
 import Curriculum from "../../images/curriculum.png";
 import pdf from "../../images/cvJulioPena.pdf";
 
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const PUBLIC_ID = process.env.REACT_APP_EMAILJS_PUBLIC_ID;
+
 export default function Contact() {
   const form = useRef();
 
@@ -19,10 +23,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        SERVICE_ID,
+        TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        PUBLIC_ID
       )
       .then(
         (result) => {
