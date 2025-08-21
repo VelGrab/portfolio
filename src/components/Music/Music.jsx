@@ -9,26 +9,41 @@ export default function Music() {
   return (
     <div>
       <Home />
-      <div className={style.containerFolder}>
+      <div className={`window-shell ${style.containerFolder}`}>
         <div className={style.containerLineSup}>
-          <img
-            className={style.folderImgInside}
-            src={FolderMusic}
-            alt="Folder Inside"
-          />
-          <p className={style.folderNameInside}>Music</p>
-          <Link className={style.link} to="/home">
-            <button className={style.buttonFolder}>X</button>
-          </Link>
+          <div className={style.lineLeft}>
+            <img
+              className={style.folderImgInside}
+              src={FolderMusic}
+              alt="Folder Inside"
+            />
+            <p className={style.folderNameInside}>Music</p>
+          </div>
+          <div className={style.windowActions}>
+            <Link className={style.link} to="/home">
+              <button className={style.buttonFolder}>×</button>
+            </Link>
+          </div>
         </div>
+        <div className={style.windowBody}>
         <div className={style.containerPlayer}>
           <ReactPlayer
             width="100%"
             height="100%"
             controls={true}
-            url="https://www.youtube.com/watch?v=WibjzL3fF1o&list=RDCb5TOFmLJnM&index=27&ab_channel=Elderbrook"
+            playing={true}
+            url="https://www.youtube.com/watch?v=1Oz2GRt-I2g"
+            config={{
+              youtube: {
+                playerVars: {
+                  showinfo: 1,
+                  rel: 0
+                }
+              }
+            }}
           />
-        </div>
+  </div>
+  </div>
       </div>
     </div>
   );

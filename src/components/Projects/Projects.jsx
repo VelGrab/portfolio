@@ -16,18 +16,23 @@ export default function Projects() {
   return (
     <div>
       <Home />
-      <div className={style.containerFolder}>
+      <div className={`window-shell ${style.containerFolder}`}>
         <div className={style.containerLineSup}>
-          <img
-            className={style.folderImgInside}
-            src={FolderProjects}
-            alt="Folder Inside"
-          />
-          <p className={style.folderNameInside}>Projects</p>
-          <Link className={style.link} to="/home">
-            <button className={style.buttonFolder}>X</button>
-          </Link>
+          <div className={style.lineLeft}>
+            <img
+              className={style.folderImgInside}
+              src={FolderProjects}
+              alt="Folder Inside"
+            />
+            <p className={style.folderNameInside}>Projects</p>
+          </div>
+          <div className={style.windowActions}>
+            <Link className={style.link} to="/home">
+              <button className={style.buttonFolder}>×</button>
+            </Link>
+          </div>
         </div>
+        <div className={style.windowBody}>
         <div className={style.containerProjects}>
           <div className={style.containerOne}>
             <a
@@ -85,7 +90,8 @@ export default function Projects() {
               <img className={style.jcVideoInside} src={jcVideoInside} alt='inside img'></img>
             </a>
           </div>
-        </div>
+  </div>
+  </div>
       </div>
     </div>
   );

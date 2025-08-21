@@ -25,22 +25,24 @@ export default function Skills() {
   return (
     <div>
       <Home />
-      <div className={style.containerFolder}>
+      <div className={`window-shell ${style.containerFolder}`}>
         <div className={style.containerLineSup}>
-          <img
-            className={style.folderImgInside}
-            src={FolderImg}
-            alt="Folder Inside"
-          />
-          <p className={style.folderNameInside}>Skills</p>
-          <Link className={style.link} to="/home">
-            <button className={style.buttonFolder}>X</button>
-          </Link>
-        </div>
-        <div>
-          <div>
-            <h3 className={style.skills}>Technical Skills</h3>
+          <div className={style.lineLeft}>
+            <img
+              className={style.folderImgInside}
+              src={FolderImg}
+              alt="Folder Inside"
+            />
+            <p className={style.folderNameInside}>Skills</p>
           </div>
+          <div className={style.windowActions}>
+            <Link className={style.link} to="/home">
+              <button className={style.buttonFolder}>×</button>
+            </Link>
+          </div>
+        </div>
+        <div className={style.windowBody}>
+          <h3 className={style.sectionTitle}>Technical Skills</h3>
           <div className={style.containerAllImages}>
             <div className={style.containerReact}>
               <img
@@ -103,11 +105,8 @@ export default function Skills() {
               <p className={style.paragraph}>Go</p>
             </div>
           </div>
-        </div>
-        <div>
-          <h3 className={style.skills}>Tools</h3>
-        </div>
-        <div className={style.containerAllTools}>
+          <h3 className={style.sectionTitle}>Tools</h3>
+          <div className={style.containerAllTools}>
           <div className={style.containerGit}>
             <img className={style.gitImg} src={GitImg} alt="Git Img"></img>
             <p className={style.paragraph}>Git</p>
@@ -159,6 +158,7 @@ export default function Skills() {
               alt="Navicat Img"
             ></img>
             <p className={style.paragraph}>Navicat</p>
+          </div>
           </div>
         </div>
       </div>

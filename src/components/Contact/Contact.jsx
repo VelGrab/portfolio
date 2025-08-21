@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import Linkedin from "../../images/linkedin.png";
 import Github from "../../images/github.png";
 import Curriculum from "../../images/curriculum.png";
-import pdf from '../../images/cvJulioPena.pdf'
+import pdf from "../../images/cvJulioPena.pdf";
 
 export default function Contact() {
   const form = useRef();
@@ -19,10 +19,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_u7twcmm",
-        "template_jfu8j97",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "KVgfIgB8_bGnvHii0"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
@@ -45,20 +45,29 @@ export default function Contact() {
   return (
     <div>
       <Home />
-      <div className={style.containerFolder}>
+      <div className={`window-shell ${style.containerFolder}`}>
         <div className={style.containerLineSup}>
-          <img
-            className={style.folderImgInside}
-            src={FolderContact}
-            alt="Folder Inside"
-          />
-          <p className={style.folderNameInside}>Contact</p>
-          <Link className={style.link} to="/home">
-            <button className={style.buttonFolder}>X</button>
-          </Link>
+          <div className={style.lineLeft}>
+            <img
+              className={style.folderImgInside}
+              src={FolderContact}
+              alt="Folder Inside"
+            />
+            <p className={style.folderNameInside}>Contact</p>
+          </div>
+          <div className={style.windowActions}>
+            <Link className={style.link} to="/home">
+              <button className={style.buttonFolder}>×</button>
+            </Link>
+          </div>
         </div>
-        <div>
+        <div className={style.windowBody}>
           <form className={style.form} ref={form} onSubmit={sendEmail}>
+            <h2 className={style.formTitle}>Get In Touch</h2>
+            <p className={style.formSubtitle}>
+              I'd love to hear from you. Send me a message and I'll respond as
+              soon as possible.
+            </p>
             <div>
               <input
                 required={true}
@@ -108,8 +117,14 @@ export default function Contact() {
                 alt="Curriculum"
               ></img>
               <button className={style.buttonCV}>
-                <a href={pdf} target="__blank" rel="noopener noreferrer" download={pdf} className={style.textCV}>
-                Descargar cv
+                <a
+                  href={pdf}
+                  target="__blank"
+                  rel="noopener noreferrer"
+                  download={pdf}
+                  className={style.textCV}
+                >
+                  Download CV
                 </a>
               </button>
             </div>

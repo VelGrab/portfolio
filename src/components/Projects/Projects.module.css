@@ -1,133 +1,160 @@
+/* Modernized Projects styles */
 .containerFolder {
-    width: 50%;
-    height: 70vh;
-    background-color: rgba(3, 3, 3, 0.87);
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    position: absolute;
-    top: 10%;
-    left: 0;
-    right: 0;
+  width: min(560px, 88vw);
+  height: min(65vh, 85vh);
+  display: flex;
+  flex-direction: column;
 }
-
 .folderImgInside {
-    width: 25px;
-    height: 25px;
-    margin-left: 5px;
+  width: 22px;
+  height: 22px;
+  margin-left: 4px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 .containerLineSup {
-    width: 100%;
-    height: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.363);
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-bottom: 1px solid var(--color-border);
+  cursor: move;
+  user-select: none;
 }
-
+.lineLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.windowActions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .folderNameInside {
-    color: #fff;
-    margin-left: 10px;
-    margin-top: 5px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
-
-.buttonFolder{
-    width: 25px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    line-height: 26px;
+.buttonFolder {
+  width: 30px;
+  height: 26px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-text-dim);
+  border: 1px solid transparent;
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  margin-right: 20px;
 }
-
-.link {
-    text-decoration: none;
-    width: 25px;
-    line-height: 10px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #fff;
-    border: none;
+.buttonFolder:hover {
+  background: var(--color-danger);
+  color: #fff;
 }
-
-.link:hover {
-    color: #000;
-    background-color: rgba(248, 0, 0, 0.768);
-    transition: all 0.3s ease-in-out;
+.windowBody {
+  flex: 1;
+  overflow: auto;
+  padding: 22px 26px 30px;
 }
-
 .containerProjects {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    height: 100%;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 26px;
+  padding: 6px 4px 16px;
 }
-
 .containerOne,
 .containerTwo,
 .containerThree,
 .containerFour {
-    width: 140px;
-    height: 140px;
-    text-align: center;
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: relative;
-    transition: all 0.6s ease-in-out;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-surface-solid);
+  box-shadow: 0 4px 14px -4px rgba(0, 0, 0, 0.55);
+  transition: transform var(--transition-med), box-shadow var(--transition-med),
+    border-color var(--transition-fast);
+  display: flex;
 }
-
-.nomadeImg {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-}
-
 .containerOne:hover,
 .containerTwo:hover,
 .containerThree:hover,
 .containerFour:hover {
-    transform: scale(1.01);
-    transition: all 0.5s ease-in-out;
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent-soft);
 }
-
+.nomadeImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.88) saturate(1.05);
+  transition: filter var(--transition-med), transform var(--transition-med);
+}
+.containerOne:hover .nomadeImg,
+.containerTwo:hover .nomadeImg,
+.containerThree:hover .nomadeImg,
+.containerFour:hover .nomadeImg {
+  filter: brightness(1) saturate(1.15);
+  transform: scale(1.04);
+}
 .targetA {
-    text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  text-decoration: none;
 }
-
-.ratingInside, .videogameInside,
-.nomadeInside, .jcVideoInside {
-    position: absolute;
-    left: 10px;
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s ease-in-out;
-    visibility: hidden;
-    border-radius: 5px;
+.ratingInside,
+.videogameInside,
+.nomadeInside,
+.jcVideoInside {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 320ms ease, transform 420ms cubic-bezier(0.4, 0.2, 0.2, 1);
 }
-
-
 .containerThree:hover .ratingInside,
 .containerTwo:hover .videogameInside,
 .containerOne:hover .nomadeInside,
 .containerFour:hover .jcVideoInside {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    border-radius: 5px;
-    transform: scale(1.01);
-    transition: all 0.5s ease-in-out;
-    top: 0px;
-    visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }
-
-@media screen and (max-width: 938px) {
-    .containerFolder {
-        width: 90%;
-        margin-top: 20px;
-    }
+@media (max-width: 930px) {
+  .containerFolder {
+    width: 92vw;
+    height: auto;
+  }
+  .windowBody {
+    padding: 18px 20px 34px;
+  }
+  .containerProjects {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 22px;
+  }
+}
+@media (max-width: 560px) {
+  .containerProjects {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 18px;
+  }
 }

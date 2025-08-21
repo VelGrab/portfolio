@@ -9,19 +9,23 @@ export default function ThisPc() {
   return (
     <div>
       <Home />
-      <div className={style.containerFolder}>
+      <div className={`window-shell ${style.containerFolder}`}>
         <div className={style.containerLineSup}>
-          <img
-            className={style.folderImgInside}
-            src={FolderImg}
-            alt="Folder Inside"
-          />
-          <p className={style.folderNameInside}>This Pc</p>
-          <Link className={style.link} to="/home">
-            <button className={style.buttonFolder}>X</button>
-          </Link>
+          <div className={style.lineLeft}>
+            <img
+              className={style.folderImgInside}
+              src={FolderImg}
+              alt="Folder Inside"
+            />
+            <p className={style.folderNameInside}>This PC</p>
+          </div>
+          <div className={style.windowActions}>
+            <Link className={style.link} to="/home">
+              <button className={style.buttonFolder}>×</button>
+            </Link>
+          </div>
         </div>
-        <div>
+        <div className={style.windowBody}>
           <div className={style.avatarContainer}>
             <img
               className={style.avatarImg}

@@ -11,78 +11,91 @@ import style from "./Home.module.css";
 
 export default function Home() {
   const navigate = useNavigate();
-  
+
   const [positions, setPositions] = useState(() => {
-    const saved = localStorage.getItem('iconPositions');
-    return saved ? JSON.parse(saved) : {
-      thispc: { x: 20, y: 20 },
-      skills: { x: 20, y: 120 },
-      projects: { x: 20, y: 220 },
-      contact: { x: 20, y: 320 },
-      music: { x: 20, y: 420 },
-      vscode: { x: 20, y: 520 }
-    };
+    const saved = localStorage.getItem("iconPositions");
+    return saved
+      ? JSON.parse(saved)
+      : {
+          thispc: { x: 20, y: 20 },
+          skills: { x: 20, y: 120 },
+          projects: { x: 20, y: 220 },
+          contact: { x: 20, y: 320 },
+          music: { x: 20, y: 420 },
+          vscode: { x: 20, y: 520 },
+        };
   });
 
   const dragStartTime = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
+  const dragStartPos = useRef({});
+  const isDraggingRef = useRef(false);
+  const draggedDistance = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    localStorage.setItem('iconPositions', JSON.stringify(positions));
+    localStorage.setItem("iconPositions", JSON.stringify(positions));
   }, [positions]);
 
-  const handleDragStart = () => {
-    setIsDragging(true);
-    dragStartTime.current = new Date().getTime();
+  const handleDragStart = (id, data) => {
+    dragStartTime.current = Date.now();
+    dragStartPos.current[id] = { x: data.x, y: data.y };
+    isDraggingRef.current = false;
+    draggedDistance.current = { x: 0, y: 0 };
+  };
+
+  const handleDrag = (id, data) => {
+    const start = dragStartPos.current[id];
+    if (start) {
+      const movedX = Math.abs(data.x - start.x);
+      const movedY = Math.abs(data.y - start.y);
+      
+      draggedDistance.current = { x: movedX, y: movedY };
+      
+      if (movedX > 5 || movedY > 5) {
+        isDraggingRef.current = true;
+      }
+    }
   };
 
   const handleDragStop = (id, data, to) => {
-    const dragEndTime = new Date().getTime();
-    const dragDuration = dragEndTime - dragStartTime.current;
-    const deltaX = Math.abs(data.x - positions[id].x);
-    const deltaY = Math.abs(data.y - positions[id].y);
-  
-    setPositions(prev => ({
+    const duration = Date.now() - (dragStartTime.current || Date.now());
+    const movedX = draggedDistance.current.x;
+    const movedY = draggedDistance.current.y;
+
+    setPositions((prev) => ({
       ...prev,
-      [id]: { x: data.x, y: data.y }
+      [id]: { x: data.x, y: data.y },
     }));
-  
-    if (dragDuration < 300 && deltaX < 10 && deltaY < 10) {
-      setTimeout(() => {
-        navigate(to);
-      }, 50);
+
+    if (!isDraggingRef.current && movedX < 5 && movedY < 5 && duration < 300) {
+      navigate(to);
     }
-  
-    setIsDragging(false);
+
+    // Reset refs
+    isDraggingRef.current = false;
+    draggedDistance.current = { x: 0, y: 0 };
   };
 
   const DesktopIcon = ({ id, to, image, name }) => {
     const iconRef = useRef(null);
-    
+
     return (
       <Draggable
         nodeRef={iconRef}
         position={positions[id]}
-        onStart={handleDragStart}
+        onStart={(e, data) => handleDragStart(id, data)}
+        onDrag={(e, data) => handleDrag(id, data)}
         onStop={(e, data) => handleDragStop(id, data, to)}
         bounds="parent"
         handle={`.${style.iconWrapper}`}
         grid={[20, 20]}
       >
         <div ref={iconRef} className={style.iconWrapper}>
-          <div 
+          <div
             className={style.iconContainer}
-            onClick={(e) => {
-              if (!isDragging) {
-                navigate(to);
-              }
-            }}
             role="button"
             tabIndex={0}
             onKeyPress={(e) => {
-              if (e.key === 'Enter' && !isDragging) {
-                navigate(to);
-              }
+              if (e.key === "Enter") navigate(to);
             }}
           >
             <img className={style.folderImg} src={image} alt={`${name} icon`} />
@@ -120,12 +133,7 @@ export default function Home() {
           image={FolderContact}
           name="Contact"
         />
-        <DesktopIcon
-          id="music"
-          to="/music"
-          image={FolderMusic}
-          name="Music"
-        />
+        <DesktopIcon id="music" to="/music" image={FolderMusic} name="Music" />
         <DesktopIcon
           id="vscode"
           to="/code-editor"

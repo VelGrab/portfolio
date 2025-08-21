@@ -1,147 +1,186 @@
 .containerFolder {
-    margin-top: 1rem;
-    width: 50%;
-    height: 70vh;
-    background-color: rgba(3, 3, 3, 0.87);
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    top: 10%;
-    left: 0;
-    right: 0;
+  width: min(540px, 88vw);
+  height: min(65vh, 85vh);
+  display: flex;
+  flex-direction: column;
 }
 
 .folderImgInside {
-    width:25px;
-    height: 25px;
-    margin-left: 5px;
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
 }
+
 .containerLineSup {
-    width: 100%;
-    height: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.363);
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  height: 42px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  cursor: move;
+  user-select: none;
+}
+
+.lineLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.windowActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.windowBody {
+  flex: 1;
+  overflow: auto;
+  padding: 22px 28px 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .folderNameInside {
-    color: #fff;
-    margin-left: 10px;
-    margin-top: 5px;
+  color: var(--color-text);
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.buttonFolder{
-    width: 25px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    line-height: 26px;
+.buttonFolder {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--color-text-dim);
+  border: 1px solid transparent;
+  border-radius: var(--radius-xs);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  padding: 0;
+  line-height: 1;
+  margin-right: 20px;
+}
+
+.buttonFolder:hover {
+  background: var(--color-danger);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
 .link {
-    text-decoration: none;
-    width: 25px;
-    line-height: 10px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-  }
-  
-  .link:hover {
-    color: #000;
-    background-color: rgba(248, 0, 0, 0.768);
-    transition: all 0.3s ease-in-out;
-  }
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .containerText {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
-    color: rgb(14, 193, 221);
-    display: inline-block;
-    white-space: nowrap;
-    border-right: 3px solid;
-    font-weight: 600;
-    margin-left: 30px;
-    margin-top: 50px;
-    font-size: 3rem;
-    width: auto;
-    overflow: hidden;
-    animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-left: 0;
+  margin-top: 100px;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px rgba(0, 194, 255, 0.45), 0 0 18px rgba(0, 194, 255, 0.25);
+  animation: none;
 }
 
 .subtitle {
-    color: rgb(14, 193, 221);
-    font-weight: 600;
-    margin-left: 10px;
-    margin-top: 10px;
-    line-height: 0px;
-    font-size: 1.3rem;
+  color: var(--color-text-dim);
+  font-weight: 500;
+  margin-left: 0;
+  margin-top: 4px;
+  line-height: 1.2;
+  font-size: 1.1rem;
 }
 
 .avatarContainer {
-    position: absolute;
+  position: absolute;
 }
 
 .containerText p {
-    color: #fff;
-    font-weight: 400;
-    margin-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 1.1rem;
-    line-height: 20px;
+  color: var(--color-text-dim);
+  font-weight: 400;
+  margin-top: 8px;
+  padding: 0 8px;
+  font-size: 0.95rem;
+  line-height: 1.45rem;
 }
 
 @keyframes typing {
-    from { width: 0}
-    to { width: 100%}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
-    50% { border-color: transparent }
+  50% {
+    border-color: transparent;
+  }
 }
 
 .avatarImg {
-    width: 120px;
-    height: 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
 }
 
 .containerTitleImg {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-
 @media screen and (max-width: 938px) {
-    .containerFolder {
-        width: 90%;
-        height: 80%;
-        margin-top: 20px;
-    }
+  .containerFolder {
+    width: 90%;
+    height: 80%;
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 442px) {
-    .title {
-        font-size: 1.4rem;
-        margin-top: 35px;
-    }
+  .title {
+    font-size: 1.4rem;
+    margin-top: 35px;
+  }
 
-    .avatarImg {
-        width: 100px;
-        height: 100px;
-    }
+  .avatarImg {
+    width: 100px;
+    height: 100px;
+  }
 }
