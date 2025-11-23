@@ -5,12 +5,35 @@ import Home from "../Home/Home";
 import NomadePortfolio from "../../images/Nomade_Portfolio2.png";
 import VideogamesPortfolio from "../../images/videogamesPortfolio2.PNG";
 import ratingPortfolio from "../../images/ratingPortfolio3.PNG";
-import nomadeInside from "../../images/Nomade_Portfolio.PNG"
-import ratingInside from "../../images/ratingPortfolio.PNG"
-import videogamesInside from "../../images/videogamesPortfolio.PNG"
-import jcVideoInside from "../../images/jcVideo.PNG"
-import jcVideoOutside from "../../images/jcVideoOutside.png"
+import jcVideoOutside from "../../images/jcVideoOutside.png";
 import { Link } from "react-router-dom";
+
+const projectsData = [
+  {
+    id: 1,
+    name: "Nomade",
+    link: "https://nomade-khaki.vercel.app/",
+    thumbnail: NomadePortfolio,
+  },
+  {
+    id: 2,
+    name: "Videogames",
+    link: "https://videogames-pi-ten.vercel.app/",
+    thumbnail: VideogamesPortfolio,
+  },
+  {
+    id: 3,
+    name: "Rating Component",
+    link: "https://velgrab.github.io/Interactive-rating-component-main/",
+    thumbnail: ratingPortfolio,
+  },
+  {
+    id: 4,
+    name: "JC Video",
+    link: "https://unique-caramel-fb9ccb.netlify.app/",
+    thumbnail: jcVideoOutside,
+  },
+];
 
 export default function Projects() {
   return (
@@ -33,65 +56,24 @@ export default function Projects() {
           </div>
         </div>
         <div className={style.windowBody}>
-        <div className={style.containerProjects}>
-          <div className={style.containerOne}>
-            <a
-              className={style.targetA}
-              href="https://nomade-khaki.vercel.app/"
-              target="__blank"
-            >
-              <img
-                className={style.nomadeImg}
-                src={NomadePortfolio}
-                alt="Nomade Img"
-              ></img>
-              <img className={style.nomadeInside} src={nomadeInside} alt='inside img'></img>
-            </a>
+          <div className={style.containerProjects}>
+            {projectsData.map((project) => (
+              <a
+                key={project.id}
+                className={style.projectItem}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className={style.folderIcon}>
+                  <div className={style.folderTab}></div>
+                  <div className={style.folderBody}></div>
+                </div>
+                <span className={style.projectName}>{project.name}</span>
+              </a>
+            ))}
           </div>
-          <div className={style.containerTwo}>
-            <a
-              className={style.targetA}
-              href="https://videogames-pi-ten.vercel.app/"
-              target="__blank"
-            >
-              <img
-                className={style.nomadeImg}
-                src={VideogamesPortfolio}
-                alt="Videogames Img"
-              ></img>
-              <img className={style.videogameInside} src={videogamesInside} alt='inside img'></img>
-            </a>
-          </div>
-          <div className={style.containerThree}>
-            <a
-              className={style.targetA}
-              href="https://velgrab.github.io/Interactive-rating-component-main/"
-              target="__blank"
-            >
-              <img
-                className={style.nomadeImg}
-                src={ratingPortfolio}
-                alt="Rating Img"
-              ></img>
-              <img className={style.ratingInside} src={ratingInside} alt='inside img'></img>
-            </a>
-          </div>
-          <div className={style.containerFour}>
-            <a
-              className={style.targetA}
-              href="https://unique-caramel-fb9ccb.netlify.app/"
-              target="__blank"
-            >
-              <img
-                className={style.nomadeImg}
-                src={jcVideoOutside}
-                alt="Jc Video Img"
-              ></img>
-              <img className={style.jcVideoInside} src={jcVideoInside} alt='inside img'></img>
-            </a>
-          </div>
-  </div>
-  </div>
+        </div>
       </div>
     </div>
   );

@@ -23,8 +23,6 @@ export default function PowerOn() {
         <Loader />
       ) : (
         <div className={style.containerBtn}>
-          <div className={style.blur}>
-          </div>
           <button onClick={changeState} className={style.btnPower}>
             Power On
           </button>
